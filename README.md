@@ -14,7 +14,7 @@ One Time Setup
 1. Make a directory in your local file system called "CityQuest"
 2. cd ./CityQuest
 3. git init
-4. git add remote origin https://github.com/akashagarwal1988/CityQuest.git
+4. git remote add origin https://github.com/akashagarwal1988/CityQuest.git
 
 -------------------------------------------------------------------------
 

@@ -8,14 +8,18 @@ CityQuest
 Setting up local repo and making code changes 
 =============================================
 
-----------------------------------------------------------------------------------
+
 One Time Setup
-==============
+--------------
 1. Make a directory in your local file system called "CityQuest"
 2. cd ./CityQuest
 3. git init
 4. git add remote origin https://github.com/akashagarwal1988/CityQuest.git
------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+
+To push and pull from remote repo
+---------------------------------
 
 5. To pull the changes from this repo - git pull origin master
 6. If u want to add some changes to this repo. Do a "git add ." in your local repo and then git commit -m "< any commit message >".

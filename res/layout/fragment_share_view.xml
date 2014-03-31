@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/share_top_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="#9ab1ff"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/share_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toLeftOf="@+id/share_button"
+                android:hint="@string/category_hint"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/share_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:text="@string/share" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:background="#ffffff" />
+
+    <EditText
+        android:id="@+id/share_place_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_top_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/share_contact_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_review"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/share_photo_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Photo" />
+
+        <Button
+            android:id="@+id/share_location_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Location" />
+
+        <Button
+            android:id="@+id/share_tags_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tags" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/share_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/share_place_name"
+        android:layout_below="@+id/share_place_name"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <RatingBar
+        android:id="@+id/share_ratings_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp" />
+
+</RelativeLayout>

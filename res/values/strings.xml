@@ -12,5 +12,6 @@
     <string name="Tab3_name">Friends</string>
     <string name="category_hint">Category</string>
     <string name="share">Share</string>
-
+    <string name="FindPlaceLabel">Places in your city</string>
+    <string name="samplePlaceName">The Home Store</string>
 </resources>

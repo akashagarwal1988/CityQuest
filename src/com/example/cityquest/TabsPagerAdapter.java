@@ -17,13 +17,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         switch (index) {
         case 0:
             // Find fragment activity
-            return new FindFragment();
+            return new FindFragmentCategories();
         case 1:
             // Share fragment activity
             return new ShareFragment();
-        case 2:
-            // Friends fragment activity
-            return new FriendsFragment();
         }
  
         return null;
@@ -32,7 +29,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // get item count - equal to number of tabs
-        return 3;
+        return 2;
     }
  
 }

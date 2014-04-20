@@ -5,14 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 public class PlaceListActivity extends Activity  {
 	
@@ -21,7 +20,7 @@ public class PlaceListActivity extends Activity  {
 	
 	protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.find_place_list_layout);
+        setContentView(R.layout.find_place_list);
         
         String[] places = getResources().getStringArray(R.array.places);
     	
@@ -32,7 +31,26 @@ public class PlaceListActivity extends Activity  {
 	    	list.add(places[i]);
 	    }
 	    
-	    final StableArrayAdapter adapter = new StableArrayAdapter(this,android.R.layout.simple_list_item_1, list);
+    	// Each row in the list stores country name, currency and flag
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+ 
+        for(int i=0;i<places.length;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", places[i]);
+            hm.put("flag", Integer.toString(R.drawable.ic_launcher) );
+            aList.add(hm);
+        }
+    	
+        // Keys used in Hashmap
+        String[] from = { "flag","txt" };
+ 
+        // Ids of views in listview_layout
+        int[] to = { R.id.logo,R.id.label};
+ 
+        // Instantiating an adapter to store each items
+        // R.layout.fragment_find_list_item defines the layout of each item
+        SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.simple_list_item, from, to);
+	    
 	    placeList.setAdapter(adapter);
 	    
 	    placeList.setOnItemClickListener(new OnItemClickListener() {
@@ -44,17 +62,4 @@ public class PlaceListActivity extends Activity  {
 	        	}
 	        });
 	    }
-	
-	 
-    private class StableArrayAdapter extends ArrayAdapter<String> {
-
- 	    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
-
- 	    public StableArrayAdapter(Context context, int textViewResourceId, List<String> objects) {
- 	      super(context, textViewResourceId, objects);
- 	      for (int i = 0; i < objects.size(); ++i) {
- 	        mIdMap.put(objects.get(i), i);
- 	      }
- 	    }
- 	}
 }

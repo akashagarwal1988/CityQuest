@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,9 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.SimpleAdapter;
 
 public class FindFragmentCategories extends Fragment {
 	
@@ -29,19 +27,34 @@ public class FindFragmentCategories extends Fragment {
     	
     	String[] categories = getResources().getStringArray(R.array.categories);
     	
-    	categoryList = (ListView) categoriesView.findViewById(R.id.category_list_view);
+    	// Each row in the list stores country name, currency and flag
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+ 
+        for(int i=0;i<categories.length;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", categories[i]);
+            hm.put("flag", Integer.toString(R.drawable.ic_launcher) );
+            aList.add(hm);
+        }
     	
-	       final ArrayList<String> list = new ArrayList<String>();
-	       for (int i = 0; i < categories.length; ++i) {
-	         list.add(categories[i]);
-	       }
-	       
-	       final StableArrayAdapter adapter = new StableArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, list);
-	       categoryList.setAdapter(adapter);
-	   
-	       
+        // Keys used in Hashmap
+        String[] from = { "flag","txt" };
+ 
+        // Ids of views in listview_layout
+        int[] to = { R.id.logo,R.id.label};
+ 
+        // Instantiating an adapter to store each items
+        // R.layout.fragment_find_list_item defines the layout of each item
+        SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.simple_list_item, from, to);
+ 
+        categoryList = ( ListView ) categoriesView.findViewById(R.id.category_list_view);
+ 
+        // Setting the adapter to the listView
+        categoryList.setAdapter(adapter);
+    	
+    	
 	       // below function is for item click on the list
-	       categoryList.setOnItemClickListener(new OnItemClickListener() {
+	    categoryList.setOnItemClickListener(new OnItemClickListener() {
 	    	   @Override
 	    	   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 	    		   fragCallback.itemSelected();
@@ -51,10 +64,7 @@ public class FindFragmentCategories extends Fragment {
         return categoriesView;
     }
     
-    
-    
-    
-    public void onAttach(Activity activity) {
+	public void onAttach(Activity activity) {
         super.onAttach(activity);
         
         // This makes sure that the container activity has implemented
@@ -65,23 +75,8 @@ public class FindFragmentCategories extends Fragment {
             throw new ClassCastException(activity.toString() + " must implement OnHeadlineSelectedListener");
         }
     }
-    
-    
-    public interface FindFragmentSelectedListener {
+
+	public interface FindFragmentSelectedListener {
     	public void itemSelected();
     }
-    
-    private class StableArrayAdapter extends ArrayAdapter<String> {
-
- 	    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
-
- 	    public StableArrayAdapter(Context context, int textViewResourceId,
- 	        List<String> objects) {
- 	      super(context, textViewResourceId, objects);
- 	      for (int i = 0; i < objects.size(); ++i) {
- 	        mIdMap.put(objects.get(i), i);
- 	      }
- 	    }
- 	}
-    
 }

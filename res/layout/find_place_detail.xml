@@ -35,14 +35,25 @@
         <ListView
             android:id="@+id/review_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="0dip"
+            android:layout_weight="0.45" />
     </LinearLayout>
+    
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/review_list_parent"
+        android:layout_centerHorizontal="true"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.1" />
     
     <LinearLayout
         android:id="@+id/option_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar1"
         android:padding="5dip"
         android:layout_alignParentBottom="true" >
         
@@ -53,6 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Photo" />
+
+        
 
         <Button
             android:id="@+id/button2"

@@ -23,7 +23,7 @@ public class cqDatabase {
 	        DB db = client.getDB(uri.getDatabase());
 	        Set<String> names = db.getCollectionNames();
 	        System.out.println(names);
-	        DBCollection collection = db.getCollection("testCollection");
+	        DBCollection collection = db.getCollection("User");
 	        DBCursor cursor = collection.find();
 	    	while(cursor.hasNext()) {
 	    	    System.out.println(cursor.next());

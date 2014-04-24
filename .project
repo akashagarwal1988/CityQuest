@@ -30,4 +30,16 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>res/drawable-hdpi/Food.png</name>
+			<type>1</type>
+			<location>C:/Users/Intel/Desktop/Food.png</location>
+		</link>
+		<link>
+			<name>res/drawable-ldpi/Food.png</name>
+			<type>1</type>
+			<location>C:/Users/Intel/Desktop/Food.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>

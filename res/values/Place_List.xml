@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="places">
+        <item>The Home Store</item>
+        <item>Good Home</item>
+        <item>Future Homes</item>
+        <item>Smart Homes</item>
+        <item>The Ikea Store</item>
+        <item>Durian</item>
+        <item>Chroma</item>
+        <item>Ekbote Furnitures</item>
+        <item>Housefull</item>
+        <item>Suprise Interiors</item>
+        </string-array>
+</resources>

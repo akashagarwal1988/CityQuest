@@ -30,6 +30,18 @@
             android:name="com.example.cityquest.TabbedView"
             android:label="@string/app_name" >
         </activity>
+
+        <activity
+            android:name="com.example.cityquest.PlaceListActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity 
+            android:name=".PlaceDetailActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
         
     </application>
 </manifest>

@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 
 public class ShareFragment extends Fragment {
  
+	
+	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
  
         View rootView = inflater.inflate(R.layout.fragment_share_view, container, false);
-         
         return rootView;
     }
 }

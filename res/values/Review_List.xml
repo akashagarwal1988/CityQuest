@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="reviews">
+        <item>Review 1</item>
+        <item>Review 2</item>
+        <item>Review 3</item>
+        <item>Review 4</item>
+        <item>Review 5</item>
+        <item>Review 6</item>
+        <item>Review 7</item>
+        <item>Review 8</item>
+        <item>Review 9</item>
+        <item>Review 10</item>
+        </string-array>
+</resources>
